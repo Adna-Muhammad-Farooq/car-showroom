@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hassanssons Bil</title>
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/743/743007.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
+<script src="https://unpkg.com/i18next-browser-languagedetector@7.1.0/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+
+<style>
+    html { scroll-behavior: smooth; }
+    nav a { position: relative; font-weight: 500; color: #1D4ED8; transition: all 0.3s ease; }
+    nav a:hover, nav a.active { color: #2563EB; }
+    nav a.active::after { content: ''; position: absolute; width: 100%; height: 2px; background-color: #2563EB; bottom: -4px; left: 0; }
+    .social-link { color: #1D4ED8; font-weight: 500; transition: all 0.3s ease; }
+    .social-link:hover { text-decoration: underline; color: #2563EB; }
+    .btn-hover { transition: all 0.3s ease; }
+    .btn-hover:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .car-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .car-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+    .explore-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .explore-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+    footer a { color: #ffffff; text-decoration: underline; }
+
+    /* Improved background colors */
+    #home { background: linear-gradient(to right, #bfdbfe, #93c5fd); }
+    #inventory { background-color: #ffffff; }
+    .explore-more { background-color: #f9fafb; }
+    #services { background-color: #ffffff; }
+    #contact { background-color: #f9fafb; }
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+<nav class="flex justify-between items-center p-4 bg-white shadow sticky top-0 z-50">
+    <div class="text-2xl font-bold text-blue-700" data-i18n="brandName">Hassanssons Bil</div>
+    <div class="space-x-4">
+    <a href="#home" class="hover:text-blue-600" data-i18n="Home">Home</a>
+    <a href="#inventory" class="hover:text-blue-600" data-i18n="Inventory">Inventory</a>
+    <a href="#services" class="hover:text-blue-600" data-i18n="Services">Services</a>
+    <a href="#contact" class="hover:text-blue-600" data-i18n="Contact">Contact</a>
+    <select id="langSelect" class="border rounded p-1">
+        <option value="en">EN</option>
+        <option value="sv">SV</option>
+    </select>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="text-center py-16">
+    <h1 class="text-4xl font-bold mb-4" data-i18n="heroHeading">Drive the Future Buy and Sell Cars with Confidence</h1>
+    <p class="text-xl font-semibold mb-2" data-i18n="heroSubheading">
+    Welcome to Hassanssons Bil, Sweden’s trusted platform for modern car trading.
+    </p>
+    <p class="text-gray-700 max-w-2xl mx-auto" data-i18n="heroDescription">
+    Whether you’re looking to sell your car or find your next dream ride, we make it simple, secure, and fast.
+    </p>
+</section>
+
+<!-- Featured Cars -->
+<section id="inventory" class="py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8" data-i18n="featuredHeading">Featured Cars</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white rounded-xl shadow p-4 car-card">
+        <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/14CDB/production/_93211258_vovlos90ap.jpg" class="rounded-xl mb-3 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold mb-2">2022 Volvo XC90</h3>
+        <p class="text-gray-600 mb-3" data-i18n="toyotaDesc">Automatic, 45,000 km, one owner.</p>
+        <a href="#contact" class="btn-hover bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition scroll-btn" data-i18n="contactSeller">Contact Seller</a>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 car-card">
+        <img src="https://media.istockphoto.com/id/1274643657/photo/volvo-xc60-test-drive-day.jpg?s=612x612&w=0&k=20&c=DMdBBG-yIkYbvNRCY_vz69NNcqTTqSPazmnH2NqJgwo=" class="rounded-xl mb-3 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold mb-2">2022 Volvo XC60</h3>
+        <p class="text-gray-600 mb-3" data-i18n="bmwDesc">Sport Package, 38,000 km, full service history.</p>
+        <a href="#contact" class="btn-hover bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition scroll-btn" data-i18n="contactSeller">Contact Seller</a>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 car-card">
+        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/27074/civic-exterior-right-front-three-quarter-148155.jpeg?q=80" class="rounded-xl mb-3 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold mb-2">2020 Honda Civic</h3>
+        <p class="text-gray-600 mb-3" data-i18n="audiDesc">Luxury interior, 25,000 km, immaculate condition.</p>
+        <a href="#contact" class="btn-hover bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition scroll-btn" data-i18n="contactSeller">Contact Seller</a>
+    </div>
+    </div>
+</section>
+
+<!-- Explore More Cars -->
+<section class="py-12 px-6 text-center explore-more">
+    <h2 class="text-3xl font-bold mb-8" data-i18n="exploreHeading">Explore More Cars</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <img src="https://p.turbosquid.com/ts-thumb/61/kiJgrO/9q/mercedesbenzsclass0/jpg/1620372939/1920x1080/fit_q87/f41dd8982b6f08762526d2649750902d506b88a2/mercedesbenzsclass0.jpg" class="rounded-xl shadow explore-card w-full h-40 object-cover" data-i18n="mercedesAlt"/>
+    <img src="https://t3.ftcdn.net/jpg/15/13/31/00/360_F_1513310054_VlEuYqFTcujpMwKVfJvbULtkcCutCWQE.jpg" class="rounded-xl shadow explore-card w-full h-40 object-cover" data-i18n="rav4Alt"/>
+    <img src="https://images.stockcake.com/public/b/2/a/b2a2df90-fef4-4967-bde6-990d5138870b_large/sleek-black-suv-stockcake.jpg" class="rounded-xl shadow explore-card w-full h-40 object-cover" data-i18n="volvoAlt"/>
+    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Jaguar/F-Pace/10644/1755774688332/front-left-side-47.jpg?impolicy=resize&imwidth=480" class="rounded-xl shadow explore-card w-full h-40 object-cover" data-i18n="audiQ5Alt"/>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4" data-i18n="servicesHeading">Our Services</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto" data-i18n="servicesDesc">
+    We provide full car selling services — inspection, photography, marketing, and secure payment.
+    </p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4" data-i18n="contactHeading">Contact</h2>
+    <p class="text-gray-700 mb-2"><strong>Showroom:</strong> Staplaregatan 6, lokal 5, Lidköping </p>
+    <p class="text-gray-700 mb-2"><strong>Business Hours:</strong> Monday–Friday 10 AM–5 PM, Saturday 10 AM–4 PM, <strong>Sunday: Closed</strong></p>
+    <p class="text-gray-700 mb-2"><strong>CEO:</strong> Adil Shinwari</p>
+    <p class="text-gray-700 mb-2"><strong>Phone:</strong> <a href="tel:+46720020165" class="social-link">+46 72 002 0165</a></p>
+    <p class="text-gray-700 mb-2"><strong>Email:</strong> <a href="mailto:Info@Hassanssonsbil.se" class="social-link">Info@Hassanssonsbil.se</a></p>
+    <p class="text-gray-700 mb-2"><strong>Social Media:</strong></p>
+    <p>
+    <a href="https://www.tiktok.com/@hassanssons.bil" target="_blank" rel="noopener noreferrer" class="social-link">TikTok: @hassanssons.bil</a> | 
+    <a href="https://www.facebook.com/HassanssonsBil" target="_blank" class="social-link">Facebook: Hassanssons Bil</a> | 
+    <a href="https://www.instagram.com/Hassanssons_bil" target="_blank" class="social-link">Instagram: Hassanssons_bil</a>
+    </p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white text-center p-4 mt-8">
+    <p class="text-sm">Hassanssons Bil</p>
+    <p class="text-xs">Staplaregatan 6, lokal 5, Lidköping • <a href="tel:+46720020165" class="text-white underline">+46720020165</a></p>
+    <p class="text-xs"><a href="mailto:Info@Hassanssonsbil.se" class="text-white underline">Info@Hassanssonsbil.se</a></p>
+</footer>
+
+<!-- i18next Translation Script -->
+<script>
+    (function(){
+    const resources = {
+        en: { translation: {
+        brandName:"Hassanssons Bil",Home:"Home",Inventory:"Inventory",Services:"Services",Contact:"Contact",
+        heroHeading:"Drive the Future Buy and Sell Cars with Confidence",
+        heroSubheading:"Welcome to Hassanssons Bil, Sweden’s trusted platform for modern car trading.",
+        heroDescription:"Whether you’re looking to sell your car or find your next dream ride, we make it simple, secure, and fast.",
+        featuredHeading:"Featured Cars",
+        tyotaDesc:"Automatic, 45,000 km, one owner.",
+        bmwDesc:"Sport Package, 38,000 km, full service history.",
+        audiDesc:"Luxury interior, 25,000 km, immaculate condition.",
+        exploreHeading:"Explore More Cars",
+        volvoAlt:"2022 Volvo XC90",mercedesAlt:"2021 Mercedes C-Class",rav4Alt:"2020 Toyota RAV4",audiQ5Alt:"2022 Audi Q5",
+        contactSeller:"Contact Seller",
+        servicesHeading:"Our Services",
+        servicesDesc:"We provide full car selling services — inspection, photography, marketing, and secure payment.",
+        contactHeading:"Contact"
+        }},
+        sv: { translation: {
+        brandName:"Hassanssons Bil",Home:"Hem",Inventory:"Lager",Services:"Tjänster",Contact:"Kontakt",
+        heroHeading:"Driv framtiden — Köp och sälj bilar med självförtroende",
+        heroSubheading:"Välkommen till Hassanssons Bil, Sveriges pålitliga plattform för modern bilhandel.",
+        heroDescription:"Oavsett om du vill sälja din bil eller hitta din nästa drömbil gör vi det enkelt, säkert och snabbt.",
+        featuredHeading:"Utvalda bilar",
+        toyotaDesc:"Automat, 45 000 km, en ägare.",
+        bmwDesc:"Sportpaket, 38 000 km, full servicehistorik.",
+        audiDesc:"Lyxinteriör, 25 000 km, i perfekt skick.",
+        exploreHeading:"Utforska fler bilar",
+        volvoAlt:"2022 Volvo XC90",mercedesAlt:"2021 Mercedes C-klass",rav4Alt:"2020 Toyota RAV4",audiQ5Alt:"2022 Audi Q5",
+        contactSeller:"Kontakta säljare",
+        servicesHeading:"Våra tjänster",
+        servicesDesc:"Vi erbjuder full service — inspektion, fotografering, marknadsföring och säker betalning.",
+        contactHeading:"Kontakt"
+        }}
+    };
+
+    i18next.use(i18nextBrowserLanguageDetector).init({ resources, fallbackLng:"en", debug: false }, ()=>{ 
+        const saved=localStorage.getItem("site_lang");
+        if(saved) i18next.changeLanguage(saved);
+        updateContent();
+    });
+
+    function updateContent(){
+        document.querySelectorAll("[data-i18n]").forEach(e=>{ const key=e.getAttribute("data-i18n"); e.textContent=i18next.t(key); });
+        document.title=i18next.t("brandName");
+    }
+
+    const langSelect=document.getElementById("langSelect");
+    if(langSelect){
+        langSelect.value=i18next.language||"en";
+        langSelect.addEventListener("change",function(){
+        const selected=this.value;
+        i18next.changeLanguage(selected,()=>{ localStorage.setItem("site_lang",selected); updateContent(); });
+        });
+    }
+
+    document.querySelectorAll('.scroll-btn').forEach(btn=>{
+        btn.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    })();
+</script>
+
+</body>
+</html>
